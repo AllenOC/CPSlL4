@@ -1,7 +1,7 @@
 #include "mbed.h"
 
 class Shape{
-    private:
+    public:
     Shape(int a){
         _a = a;
         _b = -1;
@@ -20,7 +20,15 @@ else
         return (_a * _b);
     
     }
-    void typr(){
+    
+    int perimeter(){
+        if(_b ==-1)
+        return (4 * _a);
+        else
+        return (2 *(_a + _b));
+    }
+
+    void type(){
 if (_b == -1)
 printf("Shape is a square with side %d \r\n, _a");
 else
@@ -31,17 +39,15 @@ private:
 int _a;
 int _b;
 
-
-
 };
-int main();
+int main()
 {
 
     Shape sqr(4);
     Shape rect1(3,7);
 
     sqr.type();
-    printf (area is %d, perimeter is %d \n\r", sqr.area(), sqr.perimeter());
+    printf("area is %d, perimeter is %d \n\r", sqr.area(), sqr.perimeter());
 
     rect1.type();
     printf("area is %d, perimeter is %d \n\r", rect1.area(), rect1.perimeter());
